@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador Web — Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="glow"></div>
+  <div class="glow2"></div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--                     HEADER                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <header>
+    <div class="logo">✦ Web Studio</div>
+    <h1>Diseño web que<br><em>convierte</em></h1>
+    <p>Sitios únicos, funcionales y a medida. Mirá nuestros trabajos y cotizá tu proyecto al instante.</p>
+    <a href="#portfolio" class="btn-hero">Ver trabajos →</a>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--                   PORTFOLIO                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="portfolio">
+    <div class="section-wrap">
+
+      <div class="section-header">
+        <div class="section-tag">✦ Trabajos</div>
+        <h2 class="section-title">Proyectos <em>realizados</em></h2>
+        <p class="section-sub">Cada sitio diseñado desde cero, adaptado a los objetivos reales del cliente.</p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs">
+        <button class="tab active" data-filter="all">Todos</button>
+        <button class="tab" data-filter="landing">Landing</button>
+        <button class="tab" data-filter="corporativo">Corporativo</button>
+        <button class="tab" data-filter="ecommerce">E-commerce</button>
+        <button class="tab" data-filter="blog">Blog / Portal</button>
+      </div>
+
+      <!-- CAROUSEL -->
+      <div class="carousel-outer">
+        <button class="carousel-btn prev" id="carouselPrev">&#8592;</button>
+        <button class="carousel-btn next" id="carouselNext">&#8594;</button>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+
+          <div class="portfolio-card" data-category="ecommerce">
+            <div class="card-img-wrap">
+              <img src="https://placehold.co/600x380/1a1a2e/c9a84c?text=E-commerce+Moda" alt="Tienda Moda Urbana" loading="lazy">
+              <div class="card-overlay">
+                <span class="overlay-tag">E-commerce</span>
+                <a href="#" class="overlay-link" target="_blank">Ver sitio ↗</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-type ecommerce">E-commerce</span>
+                <span class="meta-year">2025</span>
+              </div>
+              <h3 class="card-name">Moda Urbana Shop</h3>
+              <p class="card-description">Tienda online de ropa con catálogo de más de 300 productos, filtros avanzados, carrito y pago por MercadoPago. Integración con sistema de stock.</p>
+              <div class="card-tags">
+                <span>MercadoPago</span><span>Stock</span><span>Responsive</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="corporativo">
+            <div class="card-img-wrap">
+              <img src="https://placehold.co/600x380/0d1f0d/4caf7d?text=Estudio+Juridico" alt="Estudio Jurídico" loading="lazy">
+              <div class="card-overlay">
+                <span class="overlay-tag">Corporativo</span>
+                <a href="#" class="overlay-link" target="_blank">Ver sitio ↗</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-type corporativo">Corporativo</span>
+                <span class="meta-year">2025</span>
+              </div>
+              <h3 class="card-name">Estudio Rodríguez & Asoc.</h3>
+              <p class="card-description">Sitio institucional para estudio jurídico con 6 secciones, formulario de consultas, blog legal y panel de administración de contenido.</p>
+              <div class="card-tags">
+                <span>CMS</span><span>Blog</span><span>Formulario</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="landing">
+            <div class="card-img-wrap">
+              <img src="https://placehold.co/600x380/1a0d2e/9b59b6?text=Landing+App" alt="Landing App Fitness" loading="lazy">
+              <div class="card-overlay">
+                <span class="overlay-tag">Landing Page</span>
+                <a href="#" class="overlay-link" target="_blank">Ver sitio ↗</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-type landing">Landing</span>
+                <span class="meta-year">2024</span>
+              </div>
+              <h3 class="card-name">FitLife App — Landing</h3>
+              <p class="card-description">Landing page de alta conversión para app de fitness. Con animaciones, sección de testimonios, video hero y botón de descarga a App Store y Google Play.</p>
+              <div class="card-tags">
+                <span>Animaciones</span><span>Video</span><span>CTA optimizado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="blog">
+            <div class="card-img-wrap">
+              <img src="https://placehold.co/600x380/1a1000/c9a84c?text=Portal+Gastronomico" alt="Portal Gastronómico" loading="lazy">
+              <div class="card-overlay">
+                <span class="overlay-tag">Blog / Portal</span>
+                <a href="#" class="overlay-link" target="_blank">Ver sitio ↗</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-type blog">Blog / Portal</span>
+                <span class="meta-year">2024</span>
+              </div>
+              <h3 class="card-name">Sabores del Norte</h3>
+              <p class="card-description">Portal gastronómico regional con más de 500 recetas, sistema de búsqueda avanzada, comentarios, newsletter y panel de gestión para editores.</p>
+              <div class="card-tags">
+                <span>Buscador</span><span>Newsletter</span><span>Multi-autor</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="ecommerce">
+            <div class="card-img-wrap">
+              <img src="https://placehold.co/600x380/0a1a20/4dd0e1?text=Ferreteria+Online" alt="Ferretería Online" loading="lazy">
+              <div class="card-overlay">
+                <span class="overlay-tag">E-commerce</span>
+                <a href="#" class="overlay-link" target="_blank">Ver sitio ↗</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-type ecommerce">E-commerce</span>
+                <span class="meta-year">2024</span>
+              </div>
+              <h3 class="card-name">Ferretería El Martillo</h3>
+              <p class="card-description">Tienda industrial con más de 1.200 productos, cotizador de materiales por m², sistema de pedidos mayoristas y panel con importación de Excel.</p>
+              <div class="card-tags">
+                <span>Mayorista</span><span>Excel import</span><span>Cotizador</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="corporativo">
+            <div class="card-img-wrap">
+              <img src="https://placehold.co/600x380/200a0a/e74c3c?text=Clinica+Medica" alt="Clínica Médica" loading="lazy">
+              <div class="card-overlay">
+                <span class="overlay-tag">Corporativo</span>
+                <a href="#" class="overlay-link" target="_blank">Ver sitio ↗</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-type corporativo">Corporativo</span>
+                <span class="meta-year">2025</span>
+              </div>
+              <h3 class="card-name">Clínica MedCentro</h3>
+              <p class="card-description">Sitio médico con turnos online en tiempo real, perfil de especialistas, resultado de estudios para pacientes y sección de noticias de salud.</p>
+              <div class="card-tags">
+                <span>Turnos online</span><span>Login</span><span>Portal paciente</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /portfolio-grid -->
+      </div><!-- /carousel-outer -->
+
+      <!-- DOTS -->
+      <div class="carousel-dots" id="carouselDots"></div>
+
+      <div class="portfolio-cta">
+        <p>¿Te gustaría algo así para tu negocio?</p>
+        <a href="#cotizador" class="btn-cta">Cotizá tu proyecto →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--                   COTIZADOR                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="cotizador">
+    <div class="section-wrap">
+
+      <div class="section-header">
+        <div class="section-tag">✦ Cotizador</div>
+        <h2 class="section-title">Armá tu <em>presupuesto</em></h2>
+        <p class="section-sub">Personalizá tu proyecto paso a paso y recibí tu cotización al instante por WhatsApp.</p>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar-outer">
+          <div class="progress-bar-inner" id="progressBar"></div>
+        </div>
+        <div class="steps-label" id="stepsLabel"></div>
+      </div>
+
+      <div class="quoter-box">
+
+        <!-- STEP 1 -->
+        <div class="step active" id="step-1">
+          <div class="step-title">¿Qué tipo de sitio necesitás?</div>
+          <div class="step-subtitle">Elegí la base de tu proyecto. Esto define el rango de precio inicial.</div>
+          <div class="cards-grid">
+            <div class="option-card" onclick="selectCard(this,'type','landing',100000,100000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">🚀</div>
+              <div class="card-title">Landing Page</div>
+              <div class="card-desc">Una página clara y efectiva para captar clientes o presentar tu servicio.</div>
+              <div class="card-price">$100.000</div>
+            </div>
+            <div class="option-card" onclick="selectCard(this,'type','corporativo',380000,580000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">🏢</div>
+              <div class="card-title">Sitio Corporativo</div>
+              <div class="card-desc">Sitio completo con múltiples secciones, presentación profesional y formularios.</div>
+              <div class="card-price">$380.000 – $580.000</div>
+            </div>
+            <div class="option-card" onclick="selectCard(this,'type','ecommerce',700000,2400000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">🛒</div>
+              <div class="card-title">E-commerce</div>
+              <div class="card-desc">Tienda online con catálogo, carrito y medios de pago integrados.</div>
+              <div class="card-price">$700.000 – $2.400.000</div>
+            </div>
+            <div class="option-card" onclick="selectCard(this,'type','blog',3000000,5400000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">✍️</div>
+              <div class="card-title">Blog / Portal</div>
+              <div class="card-desc">Plataforma editorial compleja con categorías, buscador y panel admin.</div>
+              <div class="card-price">$3.000.000 – $5.400.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step" id="step-2">
+          <div class="step-title">¿Cuántas secciones o páginas?</div>
+          <div class="step-subtitle">Cada sección adicional agrega complejidad y valor al proyecto.</div>
+          <div class="slider-wrap">
+            <div class="slider-label">
+              <span>Cantidad de páginas/secciones</span>
+              <span class="slider-value" id="pagesVal">3 páginas</span>
+            </div>
+            <input type="range" min="1" max="20" value="3" id="pagesSlider" oninput="updatePages(this.value)">
+            <div class="slider-extremes">
+              <span>1 página</span><span>20 páginas</span>
+            </div>
+          </div>
+          <div class="toggle-list">
+            <div class="toggle-item" onclick="toggleFeature(this,'blog_integrado',80000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Blog integrado</div>
+                <div class="toggle-desc">Sistema de artículos y noticias con categorías</div>
+              </div>
+              <div class="toggle-price">+ $80.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'multilenguaje',120000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Multilenguaje</div>
+                <div class="toggle-desc">El sitio disponible en 2 o más idiomas</div>
+              </div>
+              <div class="toggle-price">+ $120.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'buscador',90000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Buscador interno</div>
+                <div class="toggle-desc">Motor de búsqueda dentro del sitio</div>
+              </div>
+              <div class="toggle-price">+ $90.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step" id="step-3">
+          <div class="step-title">¿Qué funcionalidades necesitás?</div>
+          <div class="step-subtitle">Seleccioná todo lo que quieras incluir en tu proyecto.</div>
+          <div class="toggle-list">
+            <div class="toggle-item" onclick="toggleFeature(this,'formulario_contacto',0)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Formulario de contacto</div>
+                <div class="toggle-desc">Con notificaciones por email</div>
+              </div>
+              <div class="toggle-price included">Incluido</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'chat_whatsapp',45000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Botón de WhatsApp flotante</div>
+                <div class="toggle-desc">Click directo para contacto inmediato</div>
+              </div>
+              <div class="toggle-price">+ $45.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'reservas',180000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Sistema de turnos / reservas</div>
+                <div class="toggle-desc">Calendario online con disponibilidad en tiempo real</div>
+              </div>
+              <div class="toggle-price">+ $180.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'login_usuarios',220000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Login de usuarios</div>
+                <div class="toggle-desc">Área privada con registro e inicio de sesión</div>
+              </div>
+              <div class="toggle-price">+ $220.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'pagos',250000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Pagos online (MercadoPago / Stripe)</div>
+                <div class="toggle-desc">Integración de pasarela de pagos segura</div>
+              </div>
+              <div class="toggle-price">+ $250.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'galeria',60000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Galería / Portfolio</div>
+                <div class="toggle-desc">Lightbox con filtros por categoría</div>
+              </div>
+              <div class="toggle-price">+ $60.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'newsletter',80000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Newsletter / Suscripción</div>
+                <div class="toggle-desc">Captación de emails con integración a Mailchimp</div>
+              </div>
+              <div class="toggle-price">+ $80.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step" id="step-4">
+          <div class="step-title">¿Sumamos una app móvil?</div>
+          <div class="step-subtitle">Una aplicación nativa lleva tu proyecto al siguiente nivel.</div>
+          <div class="cards-grid">
+            <div class="option-card" onclick="selectCard(this,'app','no_app',0,0)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">💻</div>
+              <div class="card-title">Solo sitio web</div>
+              <div class="card-desc">Responsive y optimizado para todos los dispositivos.</div>
+              <div class="card-price">Sin costo adicional</div>
+            </div>
+            <div class="option-card" onclick="selectCard(this,'app','pwa',150000,150000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">📱</div>
+              <div class="card-title">PWA</div>
+              <div class="card-desc">El sitio funciona como app instalable en el celular, sin tienda de apps.</div>
+              <div class="card-price">+ $150.000</div>
+            </div>
+            <div class="option-card" onclick="selectCard(this,'app','app_hibrida',680000,680000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">🤖</div>
+              <div class="card-title">App Híbrida</div>
+              <div class="card-desc">App para Android e iOS. Un código, dos plataformas.</div>
+              <div class="card-price">+ $680.000</div>
+            </div>
+            <div class="option-card" onclick="selectCard(this,'app','app_nativa',1400000,1400000)">
+              <div class="card-check">✓</div>
+              <div class="card-icon">⚡</div>
+              <div class="card-title">App Nativa</div>
+              <div class="card-desc">Máximo rendimiento. Desarrollada específicamente para iOS y Android.</div>
+              <div class="card-price">+ $1.400.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step" id="step-5">
+          <div class="step-title">¿Con qué estilo visual te identificás?</div>
+          <div class="step-subtitle">Elegí la paleta que represente mejor tu marca o proyecto.</div>
+          <div class="palette-grid">
+            <div class="palette-card" onclick="selectPalette(this,'Elegante & Dorado')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#0d0d0f"></div>
+                <div class="swatch" style="background:#1a1a1e"></div>
+                <div class="swatch" style="background:#c9a84c"></div>
+                <div class="swatch" style="background:#f0ede8"></div>
+              </div>
+              <div class="palette-name">Elegante & Dorado</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Fresco & Minimalista')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#ffffff"></div>
+                <div class="swatch" style="background:#f5f5f0"></div>
+                <div class="swatch" style="background:#222222"></div>
+                <div class="swatch" style="background:#4a90e2"></div>
+              </div>
+              <div class="palette-name">Fresco & Minimalista</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Naturaleza & Vida')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#f9f6f0"></div>
+                <div class="swatch" style="background:#d4e6c3"></div>
+                <div class="swatch" style="background:#4a7c59"></div>
+                <div class="swatch" style="background:#2d4a2d"></div>
+              </div>
+              <div class="palette-name">Naturaleza & Vida</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Vibrante & Moderno')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#ff6b6b"></div>
+                <div class="swatch" style="background:#ffd93d"></div>
+                <div class="swatch" style="background:#6bcb77"></div>
+                <div class="swatch" style="background:#4d96ff"></div>
+              </div>
+              <div class="palette-name">Vibrante & Moderno</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Tech & Oscuro')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#0a0e1a"></div>
+                <div class="swatch" style="background:#1a2040"></div>
+                <div class="swatch" style="background:#4d79ff"></div>
+                <div class="swatch" style="background:#00e5ff"></div>
+              </div>
+              <div class="palette-name">Tech & Oscuro</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Cálido & Artesanal')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#fdf6ec"></div>
+                <div class="swatch" style="background:#f5dfc3"></div>
+                <div class="swatch" style="background:#c0622f"></div>
+                <div class="swatch" style="background:#4a2c0a"></div>
+              </div>
+              <div class="palette-name">Cálido & Artesanal</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Pastel & Suave')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:#fde8f0"></div>
+                <div class="swatch" style="background:#e8d8f8"></div>
+                <div class="swatch" style="background:#d8eef8"></div>
+                <div class="swatch" style="background:#f8f0d8"></div>
+              </div>
+              <div class="palette-name">Pastel & Suave</div>
+            </div>
+            <div class="palette-card" onclick="selectPalette(this,'Lo definimos juntos')">
+              <div class="palette-swatches">
+                <div class="swatch" style="background:linear-gradient(135deg,#ccc,#888)"></div>
+                <div class="swatch" style="background:linear-gradient(135deg,#888,#555)"></div>
+                <div class="swatch" style="background:#c9a84c"></div>
+                <div class="swatch" style="background:#f0f0f0"></div>
+              </div>
+              <div class="palette-name">Lo definimos juntos</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="step" id="step-6">
+          <div class="step-title">¿Posicionamiento y marketing?</div>
+          <div class="step-subtitle">Atraé más clientes con estas herramientas incluidas en el proyecto.</div>
+          <div class="toggle-list">
+            <div class="toggle-item" onclick="toggleFeature(this,'seo_basico',0)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">SEO básico</div>
+                <div class="toggle-desc">Meta tags, velocidad de carga y estructura semántica</div>
+              </div>
+              <div class="toggle-price included">Incluido</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'seo_avanzado',150000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">SEO avanzado</div>
+                <div class="toggle-desc">Research de keywords, schema markup, sitemap XML y Google Search Console</div>
+              </div>
+              <div class="toggle-price">+ $150.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'analytics',60000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Analytics & Métricas</div>
+                <div class="toggle-desc">Google Analytics 4 + Hotjar para ver comportamiento de usuarios</div>
+              </div>
+              <div class="toggle-price">+ $60.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'redes_sociales',80000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Integración de redes sociales</div>
+                <div class="toggle-desc">Feed de Instagram, botones de compartir y Open Graph</div>
+              </div>
+              <div class="toggle-price">+ $80.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'google_ads_pixel',90000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Pixel de Facebook + Google Ads</div>
+                <div class="toggle-desc">Para campañas de remarketing y conversiones</div>
+              </div>
+              <div class="toggle-price">+ $90.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 7 -->
+        <div class="step" id="step-7">
+          <div class="step-title">¿Algo más para tu proyecto?</div>
+          <div class="step-subtitle">Servicios adicionales que completan tu presencia digital.</div>
+          <div class="toggle-list">
+            <div class="toggle-item" onclick="toggleFeature(this,'dominio_hosting',60000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Dominio + Hosting (1 año)</div>
+                <div class="toggle-desc">Tu .com.ar o .com configurado y alojado</div>
+              </div>
+              <div class="toggle-price">+ $60.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'mantenimiento',120000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Plan de mantenimiento (6 meses)</div>
+                <div class="toggle-desc">Actualizaciones, backups y soporte técnico mensual</div>
+              </div>
+              <div class="toggle-price">+ $120.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'capacitacion',80000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Capacitación para gestión del sitio</div>
+                <div class="toggle-desc">Sesión de 2hs para que puedas manejar tu sitio solo</div>
+              </div>
+              <div class="toggle-price">+ $80.000</div>
+            </div>
+            <div class="toggle-item" onclick="toggleFeature(this,'logo',150000)">
+              <div class="toggle-box">✓</div>
+              <div class="toggle-content">
+                <div class="toggle-title">Diseño de logotipo</div>
+                <div class="toggle-desc">Identidad visual profesional con manual de marca</div>
+              </div>
+              <div class="toggle-price">+ $150.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 8 -->
+        <div class="step" id="step-8">
+          <div class="step-title">¿Cómo te contactamos?</div>
+          <div class="step-subtitle">Estos datos van en tu cotización para que te podamos responder rápido.</div>
+          <label class="input-label">Tu nombre *</label>
+          <input type="text" class="text-input" id="clientName" placeholder="Ej: Martina García">
+          <label class="input-label">Tu empresa o proyecto *</label>
+          <input type="text" class="text-input" id="clientBusiness" placeholder="Ej: Estudio de diseño, Ferretería Norte, etc.">
+          <label class="input-label">Tu número de WhatsApp *</label>
+          <input type="text" class="text-input" id="clientPhone" placeholder="Ej: +54 9 11 2345 6789">
+          <label class="input-label">¿Algo que quieras aclarar? (opcional)</label>
+          <input type="text" class="text-input" id="clientNote" placeholder="Ej: Quiero algo parecido a un sitio en particular...">
+        </div>
+
+        <!-- STEP 9 -->
+        <div class="step" id="step-9">
+          <div class="step-title">Tu cotización <em class="gold-italic">está lista</em></div>
+          <div class="step-subtitle">Revisá el detalle y enviala por WhatsApp con un clic.</div>
+
+          <div class="total-box">
+            <div class="total-label">Inversión estimada</div>
+            <div class="total-amount" id="summaryAmount">$0</div>
+            <div class="total-sub" id="summaryRange"></div>
+          </div>
+
+          <div class="deposit-box">
+            <div class="deposit-icon">💳</div>
+            <div class="deposit-text">
+              Para arrancar el proyecto se requiere un anticipo del <strong class="deposit-amount">30%</strong> — aproximadamente <strong class="deposit-amount" id="depositAmount">$0</strong>. El saldo se abona a la entrega final.
+            </div>
+          </div>
+
+          <div class="timeline-box">
+            <div class="deposit-icon">📅</div>
+            <div class="timeline-text">
+              <strong>Primeros 15 días hábiles:</strong> recibirás el boceto inicial del diseño para tu aprobación antes de continuar con el desarrollo.
+            </div>
+          </div>
+
+          <div class="summary-section" id="summarySection"></div>
+
+          <button class="wa-btn" onclick="sendWhatsApp()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Enviar cotización por WhatsApp
+          </button>
+        </div>
+
+      </div><!-- /quoter-box -->
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--                  PRICE BAR                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="price-bar" id="priceBar">
+    <div class="price-display">
+      <div class="price-label">Estimación actual</div>
+      <div class="price-amount" id="priceAmount">$0</div>
+      <div class="price-range" id="priceRange">Seleccioná el tipo de sitio para comenzar</div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-outline" id="btnBack" onclick="prevStep()">← Atrás</button>
+      <button class="btn btn-primary" id="btnNext" onclick="nextStep()">Comenzar →</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
