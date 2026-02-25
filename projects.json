@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1001,
+    "cat": "landing",
+    "name": "Mi Primer Proyecto Real",
+    "year": 2024,
+    "height": 260,
+    "img": "https://placehold.co/600x260/1a0d2e/9b59b6?text=Mi+Proyecto+Real",
+    "images": [
+      "https://placehold.co/900x500/1a0d2e/9b59b6?text=Vista+1",
+      "https://placehold.co/900x500/0d0a1e/8e44ad?text=Vista+2",
+      "https://placehold.co/900x500/1a0d2e/9b59b6?text=Mobile"
+    ],
+    "desc": "Descripción del proyecto real. Reemplazá esto con la descripción real de tu proyecto.",
+    "challenge": {
+      "challenge": "El desafío del cliente aquí.",
+      "solution": "La solución que implementamos.",
+      "result": "Los resultados obtenidos."
+    },
+    "testi": {
+      "initials": "JD",
+      "name": "Juan Doe",
+      "role": "Cliente Real",
+      "text": "El testimonio real del cliente va acá."
+    },
+    "tech": ["HTML/CSS", "JavaScript", "WordPress"],
+    "url": "https://ejemplo.com",
+    "client": "Nombre del Cliente",
+    "real": true
+  }
+]

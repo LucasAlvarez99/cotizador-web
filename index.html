@@ -33,10 +33,11 @@
 
   <!-- HEADER -->
   <header>
+    <!-- CAMBIO 2: Banner oferta 50% del 2 al 9 de marzo con countdown -->
     <div class="timer-banner" id="timerBanner">
       <span>🔥</span>
-      <span>Contactanos esta semana y recibí una <strong>consultoría inicial gratuita</strong></span>
-      <div class="timer-clock" id="timerClock">--:--:--</div>
+      <span>Oferta especial: <strong>50% de descuento</strong> · Del 2 al 9 de marzo</span>
+      <div class="timer-clock" id="timerClock">--d --:--:--</div>
     </div>
     <div class="hero-content">
       <div class="hero-tag">✦ Diseño web profesional · Buenos Aires</div>
@@ -44,17 +45,19 @@
       <p>Diseño, desarrollo y estrategia digital. Cada proyecto es único, construido desde cero para tu negocio.</p>
       <div class="hero-btns">
         <a href="#quiz" class="btn-hero">¿Qué sitio necesito? →</a>
-        <a href="#portfolio" class="btn-hero-outline">Ver +90 proyectos</a>
+        <!-- CAMBIO 4: cantidad real de proyectos -->
+        <a href="#portfolio" class="btn-hero-outline" id="heroPortfolioBtn">Ver +90 proyectos</a>
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><span class="hstat-n">+90</span><span class="hstat-l">Proyectos</span></div>
+      <!-- CAMBIO 1: IDs dinámicos -->
+      <div class="hstat"><span class="hstat-n" id="statProjects">+90</span><span class="hstat-l">Proyectos</span></div>
       <div class="hstat-div"></div>
-      <div class="hstat"><span class="hstat-n">5★</span><span class="hstat-l">Calificación</span></div>
+      <div class="hstat"><span class="hstat-n" id="statRating">5★</span><span class="hstat-l">Calificación</span></div>
       <div class="hstat-div"></div>
       <div class="hstat"><span class="hstat-n">15</span><span class="hstat-l">Días al boceto</span></div>
       <div class="hstat-div"></div>
-      <div class="hstat"><span class="hstat-n">98%</span><span class="hstat-l">Satisfacción</span></div>
+      <div class="hstat"><span class="hstat-n" id="statSatisfaction">100%</span><span class="hstat-l">Satisfacción</span></div>
     </div>
   </header>
 
@@ -139,11 +142,9 @@
     <div class="section-wrap wide">
       <div class="section-header">
         <div class="section-tag">✦ Portfolio</div>
-        <h2 class="section-title">+90 proyectos<br><em>realizados</em></h2>
+        <h2 class="section-title" id="portfolioTitle">+90 proyectos<br><em>realizados</em></h2>
         <p class="section-sub">Cada sitio es único. Explorá nuestros trabajos y hacé click para ver el detalle completo.</p>
       </div>
-
-      <!-- FILTERS + SEARCH -->
       <div class="portfolio-controls">
         <div class="filter-tabs" id="filterTabs">
           <button class="tab active" data-filter="all">Todos <span class="tab-count" id="count-all">90</span></button>
@@ -157,11 +158,7 @@
           <input type="text" class="portfolio-search" id="portfolioSearch" placeholder="🔍  Buscar proyecto..." oninput="filterPortfolio()">
         </div>
       </div>
-
-      <!-- MASONRY GRID -->
       <div class="masonry-grid" id="masonryGrid"></div>
-
-      <!-- LOAD MORE -->
       <div class="load-more-wrap" id="loadMoreWrap">
         <div class="load-more-info" id="loadMoreInfo">Mostrando 24 de 90 proyectos</div>
         <button class="btn-load-more" id="btnLoadMore" onclick="loadMore()">Cargar más proyectos ↓</button>
@@ -178,58 +175,30 @@
         <p class="section-sub">Trabajamos proyectos de todo tamaño. El precio se define según la complejidad real de tu sitio.</p>
       </div>
       <div class="plans-cards">
-        <div class="plan-card">
-          <div class="plan-icon">🚀</div>
-          <div class="plan-name">Landing Page</div>
-          <div class="plan-desc">Una página impactante para captar clientes, presentar tu servicio o lanzar un producto. Diseño enfocado en conversión.</div>
-          <ul class="plan-features">
-            <li>✅ Diseño personalizado</li><li>✅ Formulario de contacto</li>
-            <li>✅ SEO básico</li><li>✅ Responsive</li><li>✅ Soporte 30 días</li>
-          </ul>
-          <a href="#cotizador" class="plan-cta">Cotizar →</a>
-        </div>
-        <div class="plan-card featured">
-          <div class="plan-badge">Más solicitado</div>
-          <div class="plan-icon">🏢</div>
-          <div class="plan-name">Sitio Corporativo</div>
-          <div class="plan-desc">Presencia profesional completa con múltiples secciones, blog, panel de administración y funcionalidades avanzadas.</div>
-          <ul class="plan-features">
-            <li>✅ Todo lo de Landing</li><li>✅ 5–15 páginas</li>
-            <li>✅ Panel CMS</li><li>✅ Blog integrado</li><li>✅ Formularios avanzados</li>
-          </ul>
-          <a href="#cotizador" class="plan-cta">Cotizar →</a>
-        </div>
-        <div class="plan-card">
-          <div class="plan-icon">🛒</div>
-          <div class="plan-name">E-commerce</div>
-          <div class="plan-desc">Tienda online completa con catálogo, carrito, medios de pago y panel de gestión de productos y pedidos.</div>
-          <ul class="plan-features">
-            <li>✅ Catálogo ilimitado</li><li>✅ MercadoPago / Stripe</li>
-            <li>✅ Panel de pedidos</li><li>✅ Stock en tiempo real</li><li>✅ Reportes de ventas</li>
-          </ul>
-          <a href="#cotizador" class="plan-cta">Cotizar →</a>
-        </div>
-        <div class="plan-card">
-          <div class="plan-icon">✍️</div>
-          <div class="plan-name">Blog / Portal</div>
-          <div class="plan-desc">Plataforma editorial de alto tráfico con buscador, categorías, autores, newsletters y monetización.</div>
-          <ul class="plan-features">
-            <li>✅ Contenido ilimitado</li><li>✅ Sistema multi-autor</li>
-            <li>✅ Buscador avanzado</li><li>✅ Newsletter</li><li>✅ Monetización</li>
-          </ul>
-          <a href="#cotizador" class="plan-cta">Cotizar →</a>
-        </div>
+        <div class="plan-card"><div class="plan-icon">🚀</div><div class="plan-name">Landing Page</div><div class="plan-desc">Una página impactante para captar clientes, presentar tu servicio o lanzar un producto.</div><ul class="plan-features"><li>✅ Diseño personalizado</li><li>✅ Formulario de contacto</li><li>✅ SEO básico</li><li>✅ Responsive</li><li>✅ Soporte 30 días</li></ul><a href="#cotizador" class="plan-cta">Cotizar →</a></div>
+        <div class="plan-card featured"><div class="plan-badge">Más solicitado</div><div class="plan-icon">🏢</div><div class="plan-name">Sitio Corporativo</div><div class="plan-desc">Presencia profesional completa con múltiples secciones, blog y panel de administración.</div><ul class="plan-features"><li>✅ Todo lo de Landing</li><li>✅ 5–15 páginas</li><li>✅ Panel CMS</li><li>✅ Blog integrado</li><li>✅ Formularios avanzados</li></ul><a href="#cotizador" class="plan-cta">Cotizar →</a></div>
+        <div class="plan-card"><div class="plan-icon">🛒</div><div class="plan-name">E-commerce</div><div class="plan-desc">Tienda online completa con catálogo, carrito, medios de pago y panel de gestión.</div><ul class="plan-features"><li>✅ Catálogo ilimitado</li><li>✅ MercadoPago / Stripe</li><li>✅ Panel de pedidos</li><li>✅ Stock en tiempo real</li><li>✅ Reportes de ventas</li></ul><a href="#cotizador" class="plan-cta">Cotizar →</a></div>
+        <div class="plan-card"><div class="plan-icon">✍️</div><div class="plan-name">Blog / Portal</div><div class="plan-desc">Plataforma editorial de alto tráfico con buscador, categorías, autores y newsletters.</div><ul class="plan-features"><li>✅ Contenido ilimitado</li><li>✅ Sistema multi-autor</li><li>✅ Buscador avanzado</li><li>✅ Newsletter</li><li>✅ Monetización</li></ul><a href="#cotizador" class="plan-cta">Cotizar →</a></div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
+  <!-- TESTIMONIOS + CAMBIO 3: reseñas reales -->
   <section id="testimonios">
     <div class="section-wrap">
       <div class="section-header">
         <div class="section-tag">✦ Clientes</div>
         <h2 class="section-title">Lo que dicen<br><em>nuestros clientes</em></h2>
+        <div class="reviews-summary">
+          <div class="rs-score" id="rsScore">5.0</div>
+          <div class="rs-right">
+            <div class="rs-stars" id="rsStars">★★★★★</div>
+            <div class="rs-meta">Basado en <span id="rsTotalCount">6</span> reseñas · Satisfacción: <strong id="rsSatisfaction">100%</strong></div>
+          </div>
+        </div>
       </div>
+
+      <!-- Cards fijas originales -->
       <div class="testimonios-grid">
         <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"El sitio superó todas mis expectativas. En los primeros 15 días ya tenía 3 consultas nuevas. El diseño es hermoso y funciona perfecto en el celular."</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#c9a84c,#e8c97a)">MR</div><div><div class="testi-name">Martina Rodríguez</div><div class="testi-role">Psicóloga · Buenos Aires</div></div></div></div>
         <div class="testi-card featured"><div class="testi-badge">⭐ Destacado</div><div class="testi-stars">★★★★★</div><p class="testi-text">"Las ventas online ya representan el 40% del negocio. No puedo creer el impacto que tuvo el e-commerce en tan poco tiempo."</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#4caf7d,#2d8a5e)">CL</div><div><div class="testi-name">Carlos López</div><div class="testi-role">Ferretería El Martillo · Córdoba</div></div></div></div>
@@ -238,10 +207,47 @@
         <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Desde que lancé la landing recibo consultas semanales. El ROI fue rapidísimo. 100% recomendado para quien quiera crecer online."</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#9b59b6,#6c3483)">LM</div><div><div class="testi-name">Laura Mendez</div><div class="testi-role">Coach de nutrición · CABA</div></div></div></div>
         <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Google empezó a posicionarlo muy bien desde el primer mes. La inversión valió muchísimo la pena."</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#c0622f,#8a3a1a)">PV</div><div><div class="testi-name">Pablo Vega</div><div class="testi-role">Sabores del Norte · Salta</div></div></div></div>
       </div>
+
+      <!-- Reseñas de usuarios reales (dinámicas) -->
+      <div id="userReviewsWrap" style="display:none">
+        <div class="user-reviews-title">Reseñas recientes de clientes</div>
+        <div class="testimonios-grid" id="userReviewsGrid"></div>
+      </div>
+
+      <!-- Formulario para dejar reseña -->
+      <div class="review-form-wrap">
+        <h3 class="review-form-title">¿Trabajaste con nosotros? <em>Dejá tu reseña</em></h3>
+        <div class="review-form-box">
+          <div class="rf-row">
+            <div class="rf-field">
+              <label class="input-label">Tu nombre *</label>
+              <input type="text" class="text-input" id="reviewName" placeholder="Ej: María García">
+            </div>
+            <div class="rf-field">
+              <label class="input-label">Tu empresa o rubro</label>
+              <input type="text" class="text-input" id="reviewRole" placeholder="Ej: Diseñadora · Córdoba">
+            </div>
+          </div>
+          <label class="input-label">Tu calificación *</label>
+          <div class="star-picker" id="starPicker">
+            <span class="star-pick" onclick="pickStar(1)">★</span>
+            <span class="star-pick" onclick="pickStar(2)">★</span>
+            <span class="star-pick" onclick="pickStar(3)">★</span>
+            <span class="star-pick" onclick="pickStar(4)">★</span>
+            <span class="star-pick" onclick="pickStar(5)">★</span>
+          </div>
+          <div class="star-label" id="starLabel">Seleccioná una calificación</div>
+          <label class="input-label" style="margin-top:14px">Tu comentario *</label>
+          <textarea class="text-input text-area" id="reviewText" placeholder="Contanos tu experiencia trabajando con nosotros..."></textarea>
+          <button class="btn-review-submit" onclick="submitReview()">Publicar reseña →</button>
+          <div class="review-success" id="reviewSuccess" style="display:none">✅ ¡Gracias! Tu reseña ya está publicada.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- COTIZADOR SIN PRECIOS -->
+  <!-- COTIZADOR -->
   <section id="cotizador">
     <div class="section-wrap narrow">
       <div class="section-header">
@@ -249,15 +255,11 @@
         <h2 class="section-title">Contanos tu<br><em>proyecto</em></h2>
         <p class="section-sub">Completá los detalles de lo que necesitás. Te enviamos un presupuesto personalizado en menos de 24hs.</p>
       </div>
-
       <div class="progress-wrap">
         <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar"></div></div>
         <div class="steps-label" id="stepsLabel"></div>
       </div>
-
       <div class="quoter-box">
-
-        <!-- STEP 1: Tipo -->
         <div class="step active" id="step-1">
           <div class="step-title">¿Qué tipo de sitio necesitás?</div>
           <div class="step-subtitle">Elegí la categoría que mejor describe tu proyecto.</div>
@@ -270,8 +272,6 @@
             <div class="option-card" onclick="selectCard(this,'type','otro')"><div class="card-check">✓</div><div class="card-icon">💡</div><div class="card-title">Otro / No sé</div><div class="card-desc">Tengo una idea pero no sé bien qué tipo de sitio es.</div></div>
           </div>
         </div>
-
-        <!-- STEP 2: Páginas -->
         <div class="step" id="step-2">
           <div class="step-title">¿Cuántas páginas o secciones?</div>
           <div class="step-subtitle">Aproximadamente, ¿cuánto contenido vas a tener?</div>
@@ -282,11 +282,9 @@
             <div class="option-card" onclick="selectCard(this,'pages','+15')"><div class="card-check">✓</div><div class="card-icon">🗂️</div><div class="card-title">Más de 15</div><div class="card-desc">Sitio grande, portal o tienda con mucho contenido.</div></div>
           </div>
         </div>
-
-        <!-- STEP 3: Funcionalidades -->
         <div class="step" id="step-3">
           <div class="step-title">¿Qué funcionalidades necesitás?</div>
-          <div class="step-subtitle">Seleccioná todo lo que quieras incluir. Esto nos ayuda a cotizar con precisión.</div>
+          <div class="step-subtitle">Seleccioná todo lo que quieras incluir.</div>
           <div class="toggle-list">
             <div class="toggle-item" onclick="toggleFeature(this,'Formulario de contacto')"><div class="toggle-box">✓</div><div class="toggle-content"><div class="toggle-title">Formulario de contacto</div><div class="toggle-desc">Con envío de emails automáticos</div></div></div>
             <div class="toggle-item" onclick="toggleFeature(this,'Botón WhatsApp flotante')"><div class="toggle-box">✓</div><div class="toggle-content"><div class="toggle-title">Botón WhatsApp flotante</div><div class="toggle-desc">Click directo para contacto inmediato</div></div></div>
@@ -300,8 +298,6 @@
             <div class="toggle-item" onclick="toggleFeature(this,'Buscador interno')"><div class="toggle-box">✓</div><div class="toggle-content"><div class="toggle-title">Buscador interno</div><div class="toggle-desc">Motor de búsqueda en el sitio</div></div></div>
           </div>
         </div>
-
-        <!-- STEP 4: Estilo -->
         <div class="step" id="step-4">
           <div class="step-title">¿Con qué estilo visual te identificás?</div>
           <div class="step-subtitle">Nos ayuda a orientar el diseño antes de empezar.</div>
@@ -316,8 +312,6 @@
             <div class="palette-card" onclick="selectPalette(this,'Lo definimos juntos')"><div class="palette-swatches"><div class="swatch" style="background:#aaa"></div><div class="swatch" style="background:#777"></div><div class="swatch" style="background:#c9a84c"></div><div class="swatch" style="background:#eee"></div></div><div class="palette-name">Lo definimos juntos</div></div>
           </div>
         </div>
-
-        <!-- STEP 5: App + extras -->
         <div class="step" id="step-5">
           <div class="step-title">¿Extras y servicios adicionales?</div>
           <div class="step-subtitle">Seleccioná si necesitás alguno de estos servicios complementarios.</div>
@@ -332,44 +326,28 @@
             <div class="toggle-item" onclick="toggleFeature(this,'Pixel FB + Google Ads')"><div class="toggle-box">✓</div><div class="toggle-content"><div class="toggle-title">Pixel FB + Google Ads</div><div class="toggle-desc">Para campañas de remarketing</div></div></div>
           </div>
         </div>
-
-        <!-- STEP 6: Datos + envío dual -->
         <div class="step" id="step-6">
           <div class="step-title">Casi listo — ¿cómo te contactamos?</div>
           <div class="step-subtitle">Completá tus datos. Te enviamos el presupuesto personalizado en menos de 24hs.</div>
-
           <label class="input-label">Tu nombre *</label>
           <input type="text" class="text-input" id="clientName" placeholder="Ej: Martina García">
-
           <label class="input-label">Tu empresa o proyecto *</label>
           <input type="text" class="text-input" id="clientBusiness" placeholder="Ej: Ferretería Norte, Estudio de yoga...">
-
           <label class="input-label">Email *</label>
           <input type="email" class="text-input" id="clientEmail" placeholder="Ej: martin@miempresa.com">
-
           <label class="input-label">WhatsApp *</label>
           <input type="text" class="text-input" id="clientPhone" placeholder="Ej: +54 9 11 2345 6789">
-
           <label class="input-label">Contanos más sobre tu proyecto (opcional)</label>
           <textarea class="text-input text-area" id="clientNote" placeholder="Ej: Necesito algo parecido a tal sitio, tengo el logo hecho, arrancamos en marzo..."></textarea>
-
           <div class="submit-options">
             <div class="submit-label">¿Cómo preferís que te contactemos?</div>
             <div class="submit-btns">
-              <button class="wa-btn" onclick="sendWhatsApp()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Enviar por WhatsApp
-              </button>
-              <button class="email-btn" onclick="sendEmail()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-                Enviar por Email
-              </button>
+              <button class="wa-btn" onclick="sendWhatsApp()"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Enviar por WhatsApp</button>
+              <button class="email-btn" onclick="sendEmail()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>Enviar por Email</button>
             </div>
             <div class="submit-note">📨 Te respondemos con presupuesto en menos de 24hs hábiles.</div>
           </div>
         </div>
-
-        <!-- STEP 7: Confirmación -->
         <div class="step" id="step-7">
           <div class="confirm-icon">🎉</div>
           <div class="step-title">¡Brief enviado con éxito!</div>
@@ -382,8 +360,7 @@
           </div>
           <button class="btn-restart" onclick="restartQuoter()">↩ Hacer otra consulta</button>
         </div>
-
-      </div><!-- /quoter-box -->
+      </div>
     </div>
   </section>
 
@@ -395,7 +372,7 @@
         <h2 class="section-title">Preguntas<br><em>frecuentes</em></h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Por qué no tienen precios publicados?</span><span class="faq-icon">+</span></div><div class="faq-a">Porque cada proyecto es diferente. El precio depende de la complejidad real: funcionalidades, número de páginas, integraciones, diseño. Publicar un precio fijo sería impreciso y nos llevaría a cobrar de más o de menos. Preferimos darte un presupuesto a medida luego de entender tu proyecto.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Por qué no tienen precios publicados?</span><span class="faq-icon">+</span></div><div class="faq-a">Porque cada proyecto es diferente. El precio depende de la complejidad real: funcionalidades, número de páginas, integraciones, diseño. Publicar un precio fijo sería impreciso. Preferimos darte un presupuesto a medida luego de entender tu proyecto.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Puedo pagar en cuotas?</span><span class="faq-icon">+</span></div><div class="faq-a">Sí. El esquema habitual es 30% al inicio y 70% contra entrega. Para proyectos grandes podemos acordar pagos en 3 etapas. Consultanos y lo acomodamos.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cuánto tarda el proyecto?</span><span class="faq-icon">+</span></div><div class="faq-a">Una landing: 2–3 semanas. Un corporativo: 4–8 semanas. Un e-commerce: 6–12 semanas. En todos los casos el boceto inicial lo tenés en los primeros 15 días hábiles.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Puedo editar el sitio yo mismo?</span><span class="faq-icon">+</span></div><div class="faq-a">Sí. Los sitios con CMS incluyen capacitación de 2hs para que puedas gestionar contenidos solo sin depender de nadie.</div></div>
@@ -405,7 +382,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (igual al original que te gustó) -->
   <footer>
     <div class="footer-wrap">
       <div class="footer-top">
@@ -428,48 +405,29 @@
     </div>
   </footer>
 
-  <!-- ═══ PROJECT POPUP ═══ -->
+  <!-- PROJECT POPUP -->
   <div class="popup-overlay" id="popupOverlay" onclick="closePopup(event)">
     <div class="popup-box" id="popupBox">
       <button class="popup-close" onclick="closePopupBtn()">✕</button>
-
-      <!-- Image carousel -->
       <div class="popup-gallery" id="popupGallery">
         <div class="popup-slides" id="popupSlides"></div>
         <button class="popup-slide-btn prev" onclick="slidePopup(-1)">‹</button>
         <button class="popup-slide-btn next" onclick="slidePopup(1)">›</button>
         <div class="popup-dots" id="popupDots"></div>
       </div>
-
       <div class="popup-content">
         <div class="popup-meta" id="popupMeta"></div>
         <h2 class="popup-title" id="popupTitle"></h2>
-
-        <!-- Tabs -->
         <div class="popup-tabs">
           <button class="ptab active" onclick="switchTab(this,'overview')">Descripción</button>
           <button class="ptab" onclick="switchTab(this,'challenge')">Caso de estudio</button>
           <button class="ptab" onclick="switchTab(this,'testimonial')">Testimonio</button>
         </div>
-
-        <div class="ptab-content active" id="tab-overview">
-          <p id="popupDesc" class="popup-desc"></p>
-          <div class="popup-tech" id="popupTech"></div>
-        </div>
-
-        <div class="ptab-content" id="tab-challenge">
-          <div class="case-study" id="popupCase"></div>
-        </div>
-
-        <div class="ptab-content" id="tab-testimonial">
-          <div class="popup-testimonial" id="popupTesti"></div>
-        </div>
-
+        <div class="ptab-content active" id="tab-overview"><p id="popupDesc" class="popup-desc"></p><div class="popup-tech" id="popupTech"></div></div>
+        <div class="ptab-content" id="tab-challenge"><div class="case-study" id="popupCase"></div></div>
+        <div class="ptab-content" id="tab-testimonial"><div class="popup-testimonial" id="popupTesti"></div></div>
         <div class="popup-actions">
-          <a href="#" class="popup-visit-btn" id="popupVisitBtn" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Visitar sitio
-          </a>
+          <a href="#" class="popup-visit-btn" id="popupVisitBtn" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Visitar sitio</a>
           <a href="#cotizador" class="popup-quote-btn" onclick="closePopupBtn()">Quiero algo así →</a>
         </div>
       </div>
@@ -479,9 +437,7 @@
   <!-- WA BUBBLE -->
   <div class="wa-bubble" id="waBubble" onclick="openWaBubble()">
     <div class="wa-bubble-tooltip">¡Hola! ¿Tenés alguna duda? 💬</div>
-    <div class="wa-bubble-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52c.149-.174.198-.298.298-.497c.099-.198.05-.371-.025-.52c-.075-.149-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51c-.173-.008-.371-.01-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413c.248-.694.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </div>
+    <div class="wa-bubble-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52c.149-.174.198-.298.298-.497c.099-.198.05-.371-.025-.52c-.075-.149-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51c-.173-.008-.371-.01-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413c.248-.694.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
   </div>
 
   <script src="app.js"></script>
