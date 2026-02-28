@@ -293,8 +293,8 @@ function initTimer() {
   const clock  = document.getElementById('timerClock');
   if (!banner || !clock) return;
 
-  const START = new Date('2025-03-02T00:00:00-03:00').getTime();
-  const END   = new Date('2025-03-15T23:59:59-03:00').getTime();
+  const START = new Date('2026-03-02T00:00:00-03:00').getTime();
+  const END   = new Date('2026-03-15T23:59:59-03:00').getTime();
 
   function fmt(ms) {
     const d = Math.floor(ms / 86400000);
