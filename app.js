@@ -516,6 +516,7 @@ async function initReviews() {
 
 // ── Estadísticas ─────────────────────────────────
 function calcStats(userReviews) {
+  if (userReviews.length === 0) return { avg: 0, pct: 0, total: 0 };
   const allStars = [...BASE_REVIEW_STARS, ...userReviews.map(r => r.stars)];
   const total    = allStars.length;
   const sum      = allStars.reduce((a, b) => a + b, 0);
@@ -527,13 +528,21 @@ function calcStats(userReviews) {
 function updateDynamicStats(userReviews = []) {
   const { avg, pct, total } = calcStats(userReviews);
   const projCount = ALL_PROJECTS.length || 0;
+  const hasRealReviews = userReviews.length > 0;
 
   const sp = document.getElementById('statProjects');
   const sr = document.getElementById('statRating');
   const ss = document.getElementById('statSatisfaction');
   if (sp) sp.textContent = projCount > 0 ? '+' + projCount : '—';
-  if (sr) sr.textContent = avg.toFixed(1) + '★';
-  if (ss) ss.textContent = pct + '%';
+  if (sr) sr.textContent = hasRealReviews ? avg.toFixed(1) + '★' : '0.0★';
+  if (ss) {
+    ss.textContent = hasRealReviews ? pct + '%' : '0%';
+    // Color segun porcentaje
+    if (!hasRealReviews || pct === 0)  ss.style.color = '';
+    else if (pct <= 30)  ss.style.color = '#e74c3c';
+    else if (pct <= 60)  ss.style.color = '#f39c12';
+    else                 ss.style.color = '#4caf7d';
+  }
 
   const heroBtn = document.getElementById('heroPortfolioBtn');
   if (heroBtn) heroBtn.textContent = projCount > 0 ? `Ver +${projCount} proyectos` : 'Ver proyectos';
@@ -547,10 +556,16 @@ function updateDynamicStats(userReviews = []) {
   const rsTotal = document.getElementById('rsTotalCount');
   const rsSat   = document.getElementById('rsSatisfaction');
   const starsHtml = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
-  if (rsScore) rsScore.textContent = avg.toFixed(1);
-  if (rsStars) rsStars.textContent = starsHtml;
-  if (rsTotal) rsTotal.textContent = total;
-  if (rsSat)   rsSat.textContent   = pct + '%';
+  if (rsScore) rsScore.textContent = hasRealReviews ? avg.toFixed(1) : '0.0';
+  if (rsStars) rsStars.textContent = hasRealReviews ? starsHtml : '☆☆☆☆☆';
+  if (rsTotal) rsTotal.textContent = hasRealReviews ? total : '0';
+  if (rsSat) {
+    rsSat.textContent = hasRealReviews ? pct + '%' : '0%';
+    if (!hasRealReviews || pct === 0) rsSat.style.color = '';
+    else if (pct <= 30) rsSat.style.color = '#e74c3c';
+    else if (pct <= 60) rsSat.style.color = '#f39c12';
+    else rsSat.style.color = '#4caf7d';
+  }
 }
 
 // ── Renderiza reseñas en el grid ─────────────────
