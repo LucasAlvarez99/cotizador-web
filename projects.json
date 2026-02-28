@@ -2,30 +2,30 @@
   {
     "id": 1001,
     "cat": "landing",
-    "name": "Mi Primer Proyecto Real",
-    "year": 2024,
+    "name": "Tolvar Soluciones",
+    "year": 2026,
     "height": 260,
-    "img": "https://placehold.co/600x260/1a0d2e/9b59b6?text=Mi+Proyecto+Real",
+    "img": "./imagenes/tolvar1.png",
     "images": [
-      "https://placehold.co/900x500/1a0d2e/9b59b6?text=Vista+1",
-      "https://placehold.co/900x500/0d0a1e/8e44ad?text=Vista+2",
-      "https://placehold.co/900x500/1a0d2e/9b59b6?text=Mobile"
+      "./imagenes/tolvar1.png",
+      "./imagenes/tolvar2.png",
+      "./imagenes/tolvar3.png"
     ],
-    "desc": "Descripción del proyecto real. Reemplazá esto con la descripción real de tu proyecto.",
+    "desc": "Ingeniería de Instalaciones Obras Integrales Técnicas en Córdoba y el Interior.",
     "challenge": {
-      "challenge": "El desafío del cliente aquí.",
-      "solution": "La solución que implementamos.",
-      "result": "Los resultados obtenidos."
+      "challenge": "Obtener una mayor visualización profesional dentro de la industria de la construcción.",
+      "solution": "La solución que implementamos, es una landing simple, minimalista, que vaya directo a lo que necesita el cliente.",
+      "result": "Una pagina profesional de ingeniería en construcción."
     },
     "testi": {
-      "initials": "JD",
-      "name": "Juan Doe",
-      "role": "Cliente Real",
+      "initials": "MT",
+      "name": "Martin Tolosa",
+      "role": "Cliente",
       "text": "El testimonio real del cliente va acá."
     },
-    "tech": ["HTML/CSS", "JavaScript", "WordPress"],
-    "url": "https://ejemplo.com",
-    "client": "Nombre del Cliente",
+    "tech": ["HTML/CSS", "JavaScript"],
+    "url": "https://lucasalvarez99.github.io/Tolvar/",
+    "client": "Martin Tolosa",
     "real": true
   }
 ]

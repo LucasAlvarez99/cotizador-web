@@ -457,9 +457,14 @@ function toggleMenu() {
 }
 
 // ══════════════════════════════════════════════════
-//  RESEÑAS
+//  RESEÑAS — JSONbin.io (compartidas entre usuarios)
+//
+//  👇 Pegá tus datos de jsonbin.io en las 2 líneas de abajo
 // ══════════════════════════════════════════════════
-const STORAGE_REVIEWS = 'ws_reviews_v1';
+const JSONBIN_ID  = '69a2e9a9ae596e708f5240fd';
+const JSONBIN_KEY = '$2a$10$qyOAVdPvJ0XeF0sT23tDcOwgyboMv3G2pHHtlUwzAom2uOSUgcE5i';
+const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
+
 const BASE_REVIEW_STARS = [5, 5, 5, 5, 5, 5];
 const AVATAR_COLORS = [
   'linear-gradient(135deg,#c9a84c,#e8c97a)',
@@ -473,16 +478,43 @@ const AVATAR_COLORS = [
 ];
 let selectedStars = 0;
 
-function initReviews() {
-  renderUserReviews();
-  updateDynamicStats();
+// ── Lee reseñas desde JSONbin ─────────────────────
+async function getStoredReviews() {
+  try {
+    const res = await fetch(JSONBIN_URL + '/latest', {
+      headers: { 'X-Master-Key': JSONBIN_KEY }
+    });
+    const data = await res.json();
+    const r = data.record; return Array.isArray(r) ? r : (r && Array.isArray(r.reviews) ? r.reviews : []);
+  } catch {
+    return [];
+  }
 }
-function getStoredReviews() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_REVIEWS) || '[]'); } catch { return []; }
+
+// ── Guarda el array completo en JSONbin ──────────
+async function saveReviews(arr) {
+  try {
+    await fetch(JSONBIN_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSONBIN_KEY
+      },
+      body: JSON.stringify({ reviews: arr })
+    });
+  } catch(e) {
+    console.error('Error guardando reseña:', e);
+  }
 }
-function saveReviews(arr) {
-  try { localStorage.setItem(STORAGE_REVIEWS, JSON.stringify(arr)); } catch {}
+
+// ── Init ─────────────────────────────────────────
+async function initReviews() {
+  await renderUserReviews();
+  const reviews = await getStoredReviews();
+  updateDynamicStats(reviews);
 }
+
+// ── Estadísticas ─────────────────────────────────
 function calcStats(userReviews) {
   const allStars = [...BASE_REVIEW_STARS, ...userReviews.map(r => r.stars)];
   const total    = allStars.length;
@@ -491,8 +523,8 @@ function calcStats(userReviews) {
   const pct      = Math.round((avg / 5) * 100);
   return { avg: Math.round(avg * 10) / 10, pct, total };
 }
-function updateDynamicStats() {
-  const userReviews = getStoredReviews();
+
+function updateDynamicStats(userReviews = []) {
   const { avg, pct, total } = calcStats(userReviews);
   const projCount = ALL_PROJECTS.length || 0;
 
@@ -520,14 +552,30 @@ function updateDynamicStats() {
   if (rsTotal) rsTotal.textContent = total;
   if (rsSat)   rsSat.textContent   = pct + '%';
 }
-function renderUserReviews() {
-  const reviews = getStoredReviews();
-  const wrap    = document.getElementById('userReviewsWrap');
-  const grid    = document.getElementById('userReviewsGrid');
+
+// ── Renderiza reseñas en el grid ─────────────────
+async function renderUserReviews() {
+  const wrap = document.getElementById('userReviewsWrap');
+  const grid = document.getElementById('userReviewsGrid');
   if (!grid) return;
-  if (reviews.length === 0) { if (wrap) wrap.style.display = 'none'; return; }
+
+  // Mostrar spinner mientras carga
+  if (wrap) wrap.style.display = 'block';
+  grid.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);width:100%;grid-column:1/-1">
+    <div style="font-size:22px;margin-bottom:8px">⏳</div>
+    <div style="font-size:13px">Cargando reseñas...</div>
+  </div>`;
+
+  const reviews = await getStoredReviews();
+
+  if (reviews.length === 0) {
+    if (wrap) wrap.style.display = 'none';
+    return;
+  }
+
   if (wrap) wrap.style.display = 'block';
   grid.innerHTML = '';
+
   [...reviews].reverse().forEach(r => {
     const initials = r.name.trim().split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
     const color    = AVATAR_COLORS[Math.abs(hashStr(r.name)) % AVATAR_COLORS.length];
@@ -548,6 +596,8 @@ function renderUserReviews() {
     grid.appendChild(card);
   });
 }
+
+// ── Star picker ───────────────────────────────────
 function pickStar(n) {
   selectedStars = n;
   const labels = ['Muy malo 😕','Malo 😐','Regular 🙂','Bueno 😊','Excelente 🤩'];
@@ -555,16 +605,26 @@ function pickStar(n) {
   if (labelEl) labelEl.textContent = labels[n - 1];
   document.querySelectorAll('.star-pick').forEach((s, i) => s.classList.toggle('active', i < n));
 }
-function submitReview() {
+
+// ── Submit reseña (async) ─────────────────────────
+async function submitReview() {
   const name = document.getElementById('reviewName').value.trim();
   const role = document.getElementById('reviewRole').value.trim();
   const text = document.getElementById('reviewText').value.trim();
+
   if (!name)            { alert('Por favor ingresá tu nombre.'); return; }
   if (!selectedStars)   { alert('Por favor seleccioná una calificación.'); return; }
   if (text.length < 10) { alert('Por favor escribí un comentario de al menos 10 caracteres.'); return; }
-  const reviews = getStoredReviews();
+
+  // Deshabilitar botón mientras guarda
+  const btn = document.querySelector('.btn-review-submit');
+  if (btn) { btn.disabled = true; btn.textContent = 'Publicando...'; }
+
+  const reviews = await getStoredReviews();
   reviews.push({ name, role, text, stars: selectedStars, date: new Date().toISOString() });
-  saveReviews(reviews);
+  await saveReviews(reviews);
+
+  // Reset form
   document.getElementById('reviewName').value = '';
   document.getElementById('reviewRole').value = '';
   document.getElementById('reviewText').value = '';
@@ -572,14 +632,18 @@ function submitReview() {
   document.querySelectorAll('.star-pick').forEach(s => s.classList.remove('active'));
   const labelEl = document.getElementById('starLabel');
   if (labelEl) labelEl.textContent = 'Seleccioná una calificación';
+  if (btn) { btn.disabled = false; btn.textContent = 'Publicar reseña →'; }
+
   const successEl = document.getElementById('reviewSuccess');
   if (successEl) {
     successEl.style.display = 'block';
     setTimeout(() => { successEl.style.display = 'none'; }, 4000);
   }
-  renderUserReviews();
-  updateDynamicStats();
+
+  await renderUserReviews();
+  updateDynamicStats(reviews);
 }
+
 
 // ── Helpers ───────────────────────────────────────
 function escapeHtml(str) {
