@@ -49,7 +49,8 @@ function renderMasonry() {
   if (visibleProjects.length === 0) {
     grid.innerHTML = `<div style="text-align:center;padding:60px 24px;color:var(--muted);width:100%">
       <div style="font-size:48px;margin-bottom:16px">📂</div>
-      <div style="font-size:16px;margin-bottom:8px;color:var(--text)">Todavía no hay proyectos cargados o hechos de ese tipo</div>
+      <div style="font-size:16px;margin-bottom:8px;color:var(--text)">Todavía no hay proyectos cargados</div>
+      <div style="font-size:13px">Agregá tus proyectos en <code style="background:var(--card);padding:2px 8px;border-radius:4px">projects.json</code> siguiendo el README</div>
     </div>`;
   }
 
@@ -461,7 +462,7 @@ function toggleMenu() {
 //  👇 Pegá tus datos de jsonbin.io en las 2 líneas de abajo
 // ══════════════════════════════════════════════════
 const JSONBIN_ID  = '69a2e9a9ae596e708f5240fd';
-const JSONBIN_KEY = '$2a$10$qyOAVdPvJ0XeF0sT23tDcOwgyboMv3G2pHHtlUwzAom2uOSUgcE5i';
+const JSONBIN_KEY = '$2a$10$lk4TqI/SJOVg8299EQHmPOXBguKnDOQWwSjUt8yp5/nEQwO9Byanq';
 const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
 
 const BASE_REVIEW_STARS = [5, 5, 5, 5, 5, 5];
