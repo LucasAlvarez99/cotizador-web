@@ -49,8 +49,7 @@ function renderMasonry() {
   if (visibleProjects.length === 0) {
     grid.innerHTML = `<div style="text-align:center;padding:60px 24px;color:var(--muted);width:100%">
       <div style="font-size:48px;margin-bottom:16px">📂</div>
-      <div style="font-size:16px;margin-bottom:8px;color:var(--text)">Todavía no hay proyectos cargados</div>
-      <div style="font-size:13px">Agregá tus proyectos en <code style="background:var(--card);padding:2px 8px;border-radius:4px">projects.json</code> siguiendo el README</div>
+      <div style="font-size:16px;margin-bottom:8px;color:var(--text)">Todavía no hay proyectos cargados o hechos de ese tipo</div>
     </div>`;
   }
 
