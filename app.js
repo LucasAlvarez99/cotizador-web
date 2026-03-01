@@ -3,8 +3,8 @@
 ════════════════════════════════════════ */
 
 // ── CONFIG ────────────────────────────────────────
-const WA_NUMBER = '5491100000000';       // 👈 Reemplazá con tu número
-const EMAIL_TO  = 'hola@webstudio.com'; // 👈 Reemplazá con tu email
+const WA_NUMBER = '5491125925851';       // 👈 Reemplazá con tu número
+const EMAIL_TO  = 'lucas.alvarez.bernardez.99@gmail.com'; // 👈 Reemplazá con tu email
 
 // ══════════════════════════════════════════════════
 //  PROYECTOS — solo desde projects.json
