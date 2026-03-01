@@ -465,7 +465,7 @@ const JSONBIN_ID  = '69a2e9a9ae596e708f5240fd';
 const JSONBIN_KEY = '$2a$10$lk4TqI/SJOVg8299EQHmPOXBguKnDOQWwSjUt8yp5/nEQwO9Byanq';
 const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
 
-const BASE_REVIEW_STARS = [5, 5, 5, 5, 5, 5];
+// Solo reseñas reales — sin estrellas base artificiales
 const AVATAR_COLORS = [
   'linear-gradient(135deg,#c9a84c,#e8c97a)',
   'linear-gradient(135deg,#4caf7d,#2d8a5e)',
@@ -517,11 +517,10 @@ async function initReviews() {
 // ── Estadísticas ─────────────────────────────────
 function calcStats(userReviews) {
   if (userReviews.length === 0) return { avg: 0, pct: 0, total: 0 };
-  const allStars = [...BASE_REVIEW_STARS, ...userReviews.map(r => r.stars)];
-  const total    = allStars.length;
-  const sum      = allStars.reduce((a, b) => a + b, 0);
-  const avg      = sum / total;
-  const pct      = Math.round((avg / 5) * 100);
+  const total = userReviews.length;
+  const sum   = userReviews.reduce((a, r) => a + r.stars, 0);
+  const avg   = sum / total;
+  const pct   = Math.round((avg / 5) * 100);
   return { avg: Math.round(avg * 10) / 10, pct, total };
 }
 
