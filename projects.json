@@ -28,4 +28,34 @@
     "client": "Martin Tolosa",
     "real": true
   }
+
+{
+    "id": 1002,
+    "cat": "e-commerce",
+    "name": "La Picada Lugano",
+    "year": 2025,
+    "height": 260,
+    "img": "./imagenes/lapicada1.png",
+    "images": [
+      "./imagenes/lapicada1.png",
+      "./imagenes/lapicada2.png",
+      "./imagenes/lapicada3.png"
+    ],
+    "desc": "Fiambreria de barrio, con productos artesanales e ideas de expansion en la web.",
+    "challenge": {
+      "challenge": "Tener una mayor llegada a clientes de otros barrios.",
+      "solution": "La solución que implementamos, es una e-commerce profesional, minimalista, semi compleja, que vaya directo a lo que necesita el cliente.",
+      "result": "Una pagina profesional de fiambreria artesanal."
+    },
+    "testi": {
+      "initials": "S&R",
+      "name": "Sandra y Ramon",
+      "role": "Cliente",
+      "text": "Es un chico muy bueno, profesional, se esfuerza, no pude usar su pagina todavía, tengo demasiado trabajo y no puedo usarla por falta de tiempo!!! Lo super recomiendo a Luquitas."
+    },
+    "tech": ["TypeScript", "React", "Supabase"],
+    "url": "https://la-picada-lugano.vercel.app/",
+    "client": "Sandra y Ramon",
+    "real": true
+  }
 ]
