@@ -31,7 +31,7 @@
 
 {
     "id": 1002,
-    "cat": "e-commerce",
+    "cat": "ecommerce",
     "name": "La Picada Lugano",
     "year": 2025,
     "height": 260,
@@ -56,6 +56,36 @@
     "tech": ["TypeScript", "React", "Supabase"],
     "url": "https://la-picada-lugano.vercel.app/",
     "client": "Sandra y Ramon",
+    "real": true
+  },
+
+{
+    "id": 1003,
+    "cat": "landing",
+    "name": "Zen Touch",
+    "year": 2026,
+    "height": 260,
+    "img": "./imagenes/zen1.png",
+    "images": [
+      "./imagenes/zen1.png",
+      "./imagenes/zen2.png",
+      "./imagenes/zen3.png"
+    ],
+    "desc": "Masajista de barrio profesional, un proyecto serio donde se ofrece un servicio de alta calidad.",
+    "challenge": {
+      "challenge": "Tener una mayor llegada a clientes mas importantes y una mayor distancia al barrio de donde reside.",
+      "solution": "La idea es crear una facilidad al cliente y pueda elegir un servicio acorde a las habilidades del masajista, con futuras implementaciones de presentaciones del masajista.",
+      "result": "Una pagina profesional de masajes."
+    },
+    "testi": {
+      "initials": "DEV",
+      "name": "DEVELOPER",
+      "role": "PRACTICA",
+      "text": "probando nuevas funcionalidades, cambios de cursos, utilizacion de APIS para calcular distancias."
+    },
+    "tech": ["HTML/CSS", "JS", "API"],
+    "url": "https://lucasalvarez99.github.io/zen-touch/",
+    "client": "Desarrollo Personal",
     "real": true
   }
 ]
