@@ -132,5 +132,38 @@
     "url": "#",
     "client": "Yoga Pop Up",
     "real": false
+  },
+  {
+    "id": 1005,
+    "cat": "landing",
+    "name": "Geri Solutions",
+    "year": 2026,
+    "height": 270,
+    "img": "./imagenes/geri1.png",
+    "images": [
+      "./imagenes/geri1.png",
+      "./imagenes/geri2.png",
+      "./imagenes/geri3.png"
+    ],
+    "desc": "Landing de una agencia de marketing digital enfocada en el equilibrio entre tecnología y bienestar personal.",
+    "challenge": {
+      "challenge": "Presentar la agencia con una identidad cuidada y comunicar su enfoque: tecnología al servicio del bienestar, sin sonar a venta agresiva.",
+      "solution": "Una landing de una sola página con la identidad de la marca: servicios, misión y visión, filosofía, enfoque de marketing en acordeón y comunidad.",
+      "result": "Una página clara y con personalidad propia para presentar la agencia."
+    },
+    "testi": {
+      "initials": "GS",
+      "name": "Geri Solutions",
+      "role": "Cliente",
+      "text": "El testimonio real del cliente va acá."
+    },
+    "tech": [
+      "HTML/CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
+    "url": "#",
+    "client": "Geri Solutions",
+    "real": true
   }
 ]
