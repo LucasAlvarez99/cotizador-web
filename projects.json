@@ -23,13 +23,15 @@
       "role": "Cliente",
       "text": "El testimonio real del cliente va acá."
     },
-    "tech": ["HTML/CSS", "JavaScript"],
+    "tech": [
+      "HTML/CSS",
+      "JavaScript"
+    ],
     "url": "https://lucasalvarez99.github.io/Tolvar/",
     "client": "Martin Tolosa",
     "real": true
   },
-
-{
+  {
     "id": 1002,
     "cat": "ecommerce",
     "name": "La Picada Lugano",
@@ -53,13 +55,16 @@
       "role": "Cliente",
       "text": "Es un chico muy bueno, profesional, se esfuerza, no pude usar su pagina todavía, tengo demasiado trabajo y no puedo usarla por falta de tiempo!!! Lo super recomiendo a Luquitas."
     },
-    "tech": ["TypeScript", "React", "Supabase"],
+    "tech": [
+      "TypeScript",
+      "React",
+      "Supabase"
+    ],
     "url": "https://la-picada-lugano.vercel.app/",
     "client": "Sandra y Ramon",
     "real": true
   },
-
-{
+  {
     "id": 1003,
     "cat": "landing",
     "name": "Zen Touch (plantilla)",
@@ -83,9 +88,49 @@
       "role": "PRACTICA",
       "text": "probando nuevas funcionalidades, cambios de cursos, utilizacion de APIS para calcular distancias."
     },
-    "tech": ["HTML/CSS", "JS", "API"],
+    "tech": [
+      "HTML/CSS",
+      "JS",
+      "API"
+    ],
     "url": "https://lucasalvarez99.github.io/zen-touch/",
     "client": "Desarrollo Personal",
     "real": true
+  },
+  {
+    "id": 1004,
+    "cat": "ecommerce",
+    "name": "Yoga Pop Up",
+    "year": 2026,
+    "height": 280,
+    "img": "./imagenes/yogapopup1.png",
+    "images": [
+      "./imagenes/yogapopup1.png",
+      "./imagenes/yogapopup2.png",
+      "./imagenes/yogapopup3.png"
+    ],
+    "desc": "Plataforma de yoga con videoteca, clases en vivo, suscripciones por niveles y tienda online.",
+    "challenge": {
+      "challenge": "Reunir en un solo sitio cursos en video, clases en vivo y una tienda, con acceso según el nivel de suscripción de cada persona.",
+      "solution": "Un sitio con videoteca protegida (videos en Cloudflare R2), suscripciones de 3 niveles con descuentos, videos que se compran sueltos con 30 días de acceso, carrito, tienda y un panel de administración.",
+      "result": "En desarrollo: pendiente de publicación y de conectar los cobros con PayPal."
+    },
+    "testi": {
+      "initials": "YP",
+      "name": "Yoga Pop Up",
+      "role": "Cliente",
+      "text": "El testimonio real del cliente va acá."
+    },
+    "tech": [
+      "HTML/CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Supabase",
+      "Cloudflare R2",
+      "PayPal"
+    ],
+    "url": "#",
+    "client": "Yoga Pop Up",
+    "real": false
   }
 ]
