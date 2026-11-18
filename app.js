@@ -634,7 +634,9 @@ async function initReviews() {
 // ── Estadísticas ─────────────────────────────────
 function updateDynamicStats(userReviews = currentReviews) {
   const sp = document.getElementById('statProjects');
-  if (sp) sp.textContent = ALL_PROJECTS.length > 0 ? '+' + ALL_PROJECTS.length : '—';
+  // Solo cuentan los proyectos que ya están online (los que tienen link real)
+  const online = ALL_PROJECTS.filter(p => p.url && p.url !== '#').length;
+  if (sp) sp.textContent = online > 0 ? '+' + online : '—';
 
   const box = document.getElementById('reviewsSummary');
   if (!box) return;
