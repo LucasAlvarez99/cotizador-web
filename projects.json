@@ -197,7 +197,7 @@
     ],
     "url": "https://cerrajerialugano.vercel.app/",
     "client": "Cerrajería a domicilio",
-    "real": false
+    "real": true
   },
   {
     "id": 1007,
@@ -233,7 +233,7 @@
     ],
     "url": "https://eldiscretoencanto.vercel.app/",
     "client": "El Discreto Encanto",
-    "real": false
+    "real": true
   },
   {
     "id": 1008,
@@ -265,6 +265,6 @@
     ],
     "url": "https://catedraltango.vercel.app/",
     "client": "Catedral Tango",
-    "real": false
+    "real": true
   }
 ]
