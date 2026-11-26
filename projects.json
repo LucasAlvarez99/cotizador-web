@@ -165,5 +165,106 @@
     "url": "https://gerisolutions.vercel.app/",
     "client": "Geri Solutions",
     "real": true
+  },
+  {
+    "id": 1006,
+    "cat": "landing",
+    "name": "Cerrajería a domicilio",
+    "year": 2026,
+    "height": 270,
+    "img": "./imagenes/cerrajeria1.png",
+    "images": [
+      "./imagenes/cerrajeria1.png",
+      "./imagenes/cerrajeria2.png",
+      "./imagenes/cerrajeria3.png"
+    ],
+    "desc": "Landing de un cerrajero a domicilio: llamada y WhatsApp siempre a la vista, y un cartel de estado en lugar de un horario fijo.",
+    "challenge": {
+      "challenge": "El cerrajero trabaja en la calle y cierra el local, así que no puede publicar un horario fijo. Además, buena parte de sus clientes son personas mayores que necesitan una web muy simple.",
+      "solution": "Botones grandes para llamar o escribir por WhatsApp, textos sin jerga y un cartel de estado (disponible, en trabajo, fuera) que se cambia en un solo lugar. Incluye barrios, preguntas frecuentes y datos estructurados para aparecer mejor en Google.",
+      "result": "En validación con el cliente antes de publicarse."
+    },
+    "testi": {
+      "initials": "CD",
+      "name": "Cerrajería a domicilio",
+      "role": "Cliente",
+      "text": "El testimonio real del cliente va acá."
+    },
+    "tech": [
+      "HTML/CSS",
+      "JavaScript",
+      "SEO local"
+    ],
+    "url": "https://cerrajerialugano.vercel.app/",
+    "client": "Cerrajería a domicilio",
+    "real": true
+  },
+  {
+    "id": 1007,
+    "cat": "corporativo",
+    "name": "El Discreto Encanto",
+    "year": 2026,
+    "height": 300,
+    "img": "./imagenes/discreto1.png",
+    "images": [
+      "./imagenes/discreto1.png",
+      "./imagenes/discreto2.png",
+      "./imagenes/discreto3.png"
+    ],
+    "desc": "Sitio de una cafetería de Buenos Aires con carta con precios, calendario de eventos y panel de administración.",
+    "challenge": {
+      "challenge": "Mostrar la carta y los eventos de un café con identidad propia, y poder cambiar precios y productos sin depender de un programador.",
+      "solution": "Un sitio con la identidad de la marca (tipografías, mascota y colores), carta con precios, calendario de eventos y un panel protegido con clave para editar todo, con opción de publicar historias de Instagram.",
+      "result": "Sitio online en Vercel, con precios y productos editables desde el panel sin tocar código."
+    },
+    "testi": {
+      "initials": "DE",
+      "name": "El Discreto Encanto",
+      "role": "Cafetería",
+      "text": "El testimonio real del cliente va acá."
+    },
+    "tech": [
+      "HTML/CSS",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "Vercel"
+    ],
+    "url": "https://eldiscretoencanto.vercel.app/",
+    "client": "El Discreto Encanto",
+    "real": true
+  },
+  {
+    "id": 1008,
+    "cat": "landing",
+    "name": "Catedral Tango",
+    "year": 2026,
+    "height": 290,
+    "img": "./imagenes/catedraltango1.png",
+    "images": [
+      "./imagenes/catedraltango1.png",
+      "./imagenes/catedraltango2.png",
+      "./imagenes/catedraltango3.png"
+    ],
+    "desc": "Maqueta de la web de un restaurante de cena show y parrilla en Mataderos, con cartelera de shows que se actualiza sola.",
+    "challenge": {
+      "challenge": "Transmitir el espíritu tanguero de un lugar con 20 años de historia y, a la vez, vender reservas, cena show, empanadas y eventos privados.",
+      "solution": "Una página única en negro y dorado con cartelera dinámica (los shows pasan de próximos a anteriores según la fecha), reservas por WhatsApp, sección de parrilla, empanadas con delivery y eventos privados.",
+      "result": "Maqueta lista; faltan validar con el cliente las fotos, la carta y los textos."
+    },
+    "testi": {
+      "initials": "CT",
+      "name": "Catedral Tango",
+      "role": "Restaurante",
+      "text": "El testimonio real del cliente va acá."
+    },
+    "tech": [
+      "HTML/CSS",
+      "JavaScript"
+    ],
+    "url": "https://catedraltango.vercel.app/",
+    "client": "Catedral Tango",
+    "real": true
   }
 ]
